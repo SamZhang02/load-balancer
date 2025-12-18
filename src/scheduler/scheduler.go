@@ -95,4 +95,5 @@ func (s *Scheduler) markAsUnhealthy(backend *Backend) {
 	log.Printf("Marking %s as unhealthy, timing out for %d seconds", backend.Url, s.FailureProps.TimeoutDurationSeconds)
 
 	now := time.Now()
-backend.UnhealthyUntil = now.Add(time.Duration(s.FailureProps.TimeoutDurationSeconds) * time.Second)}
+	backend.UnhealthyUntil = now.Add(time.Duration(s.FailureProps.TimeoutDurationSeconds) * time.Second)
+}
