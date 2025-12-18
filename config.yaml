@@ -6,13 +6,14 @@ server:
 upstream:
   app:
     backends:
-      - 127.0.0.1:8081
-      - 127.0.0.1:8082
-      - 127.0.0.1:8083
-      - 127.0.0.1:8084
-      - 127.0.0.1:8085
+      - http://127.0.0.1:8081
+      - http://127.0.0.1:8082
+      - http://127.0.0.1:8083
+      - http://127.0.0.1:8084
+      - http://127.0.0.1:8085
 
     # If a backend fails 3 times in 30 seconds, stop forwarding requests to it until the 30 seconds end
     fail:
       max_fail: 3
+      fail_timeframe: 30
       fail_timeout: 30
